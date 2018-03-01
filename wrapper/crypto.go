@@ -1,4 +1,4 @@
-package cryptowrapper
+package wrapper
 
 import (
 	"bytes"
@@ -11,6 +11,7 @@ import (
 
 //Symmetric-key encryption and decryption functions, based on https://gist.github.com/jyap808/8250124
 
+//Takes an encrypted message and a key and returns the decrypted message.
 func SymmetricDecrypt(message string, key string) ([]byte, error) {
 	decbuf := bytes.NewBuffer([]byte(message))
 	result, err := armor.Decode(decbuf)
